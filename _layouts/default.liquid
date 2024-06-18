@@ -16,39 +16,49 @@
   </head>
 
   <!-- Body -->
-  <body class="{% if site.navbar_fixed %}fixed-top-nav{% endif %} {% unless site.footer_fixed %}sticky-bottom-footer{% endunless %}">
-    <!-- Header -->
-    {% include header.liquid %}
+  <body class="{% if site.navbar_fixed %}fixed-top-nav{% endif %} {% unless site.footer_fixed %} sticky-bottom-footer{% endunless %}">
+    <!-- Wrapper for sticky footer layout -->
+    <div class="wrapper">
+      <!-- Header -->
+      {% include header.liquid %}
 
-    <!-- Content -->
-    <div class="container mt-5" role="main">
-      {% if page.toc and page.toc.sidebar %}
-        {% if page.toc.sidebar == 'right' %}
-          <div class="row">
-            <!-- main content area -->
-            <div class="col-sm-9">{{ content }}</div>
-            <!-- sidebar, which will move to the top on a small screen -->
-            <div class="col-sm-3">
-              <nav id="toc-sidebar" class="sticky-top"></nav>
-            </div>
-          </div>
-        {% else %}
-          <div class="row">
-            <!-- sidebar, which will move to the top on a small screen -->
-            <div class="col-sm-3">
-              <nav id="toc-sidebar" class="sticky-top"></nav>
-            </div>
-            <!-- main content area -->
-            <div class="col-sm-9">{{ content }}</div>
-          </div>
-        {% endif %}
-      {% else %}
-        {{ content }}
+      <!-- Banner - Directly under the navbar -->
+      {% if page.layout == "home" %}
+        <div class="banner">
+          <img src="{{ '/assets/img/materials/banner-1.png' | relative_url }}" alt="Banner Image" class="full-width-banner">
+        </div>
       {% endif %}
-    </div>
+      
+      <!-- Main Content -->
+      <main class="container mt-5 main-content" role="main">
+        {% if page.toc and page.toc.sidebar %}
+          {% if page.toc.sidebar == 'right' %}
+            <div class="row">
+              <!-- main content area -->
+              <div class="col-sm-9">{{ content }}</div>
+              <!-- sidebar, which will move to the top on a small screen -->
+              <div class="col-sm-3">
+                <nav id="toc-sidebar" class="sticky-top"></nav>
+              </div>
+            </div>
+          {% else %}
+            <div class="row">
+              <!-- sidebar, which will move to the top on a small screen -->
+              <div class="col-sm-3">
+                <nav id="toc-sidebar" class="sticky-top"></nav>
+              </div>
+              <!-- main content area -->
+              <div class="col-sm-9">{{ content }}</div>
+            </div>
+          {% endif %}
+        {% else %}
+          {{ content }}
+        {% endif %}
+      </main>
 
-    <!-- Footer -->
-    {% include footer.liquid %}
+      <!-- Footer -->
+      {% include footer.liquid %}
+    </div>
 
     <!-- JavaScripts -->
     {% include scripts/jquery.liquid %}

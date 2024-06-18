@@ -3,11 +3,13 @@
 ---
 @charset "utf-8";
 
-// Dimensions
 $max-content-width: {{ site.max_width }};
 
+// Import variables at the beginning
+@import "variables";
+
+// Other imports
 @import
-  "variables",
   "themes",
   "layout",
   "base",
@@ -23,3 +25,103 @@ $max-content-width: {{ site.max_width }};
   "tabler-icons/tabler-icons-filled.scss",
   "tabler-icons/tabler-icons-outline.scss"
 ;
+
+.banner {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.banner img.full-width-banner {
+  display: block;
+  width: 100vw;
+  max-width: 100vw;
+  height: auto;
+  margin: 0;
+}
+
+.footer-logo {
+  max-width: 150px;   // Adjust the maximum width
+  height: auto;       // Maintain aspect ratio
+  display: none;      // Initially hide all logos
+  margin: 0 auto;     // Center images in their columns
+  padding: 0.5rem;    // Adds some space around the logos
+}
+
+/* Show light logos by default */
+.footer-logo-light {
+  display: inline-block;
+}
+
+/* Media query for dark mode */
+@media (prefers-color-scheme: dark) {
+  .footer-logo-light {
+    display: none;    // Hide light logos in dark mode
+  }
+
+  .footer-logo-dark {
+    display: inline-block; // Show dark logos in dark mode
+  }
+}
+
+/* Social Icons */
+.social-icon {
+  max-width: 40px; // Adjust the size as needed
+  margin: 0 10px; // Space between icons
+  vertical-align: middle; // Align icons vertically
+}
+
+.nav-link {
+ /*  text-transform: uppercase; */
+}
+
+.post-image img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.post-preview {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.post-preview-image img {
+  width: 150px;
+  height: auto;
+  margin-right: 20px;
+}
+
+.post-preview-content {
+  flex: 1;
+}
+
+
+/* Ensure that the html and body consume the full height */
+html, body {
+  height: 100%;
+  margin: 0;
+  margin-bottom: 50vw;
+}
+
+/* The wrapper needs to fill the entire viewport minus the footer height */
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* The main content flex-grow pushes the footer to the bottom */
+.main-content {
+  flex-grow: 1;
+}
+
+/* Add margin-top to the footer to avoid it covering content */
+footer {
+  margin-top: auto;
+  margin-bottom: 0px;
+}
+
+
+
