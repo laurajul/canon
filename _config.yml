@@ -49,7 +49,7 @@ rss_icon: true
 
 navbar_fixed: true
 footer_fixed: true
-search_enabled: true
+search_enabled: false
 socials_in_search: true
 
 # Dimensions
@@ -130,8 +130,8 @@ bing_site_verification: # out your bing-site-verification ID (Bing Webmaster)
 # Blog
 # -----------------------------------------------------------------------------
 
-blog_name: News # blog_name will be displayed in your blog page
-blog_description: activities 
+blog_name: News & events # blog_name will be displayed in your blog page
+blog_description: Conferences, talks, workshops and announcements
 permalink: /blog/:year/:title/
 lsi: false # produce an index for related posts
 
