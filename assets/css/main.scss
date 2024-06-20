@@ -41,11 +41,11 @@ $max-content-width: {{ site.max_width }};
 }
 
 .footer-logo {
-  max-width: 150px;   // Adjust the maximum width
-  height: auto;       // Maintain aspect ratio
+  max-height: 60px;   // Adjust the maximum width
+  width: auto;       // Maintain aspect ratio
   display: none;      // Initially hide all logos
   margin: 0 auto;     // Center images in their columns
-  padding: 0.5rem;    // Adds some space around the logos
+  padding: 0.1rem;    // Adds some space around the logos
 }
 
 /* Show light logos by default */
@@ -97,31 +97,9 @@ $max-content-width: {{ site.max_width }};
   flex: 1;
 }
 
-
 /* Ensure that the html and body consume the full height */
 html, body {
   height: 100%;
   margin: 0;
   margin-bottom: 50vw;
 }
-
-/* The wrapper needs to fill the entire viewport minus the footer height */
-.wrapper {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-/* The main content flex-grow pushes the footer to the bottom */
-.main-content {
-  flex-grow: 1;
-}
-
-/* Add margin-top to the footer to avoid it covering content */
-footer {
-  margin-top: auto;
-  margin-bottom: 0px;
-}
-
-
-

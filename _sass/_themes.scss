@@ -1,7 +1,3 @@
-/*******************************************************************************
- * Themes
- ******************************************************************************/
-
 :root {
   --global-bg-color: #{$white-color};
   --global-code-bg-color: #{$code-bg-color-light};
@@ -10,8 +6,8 @@
   --global-theme-color: #{$purple-color};
   --global-hover-color: #{$purple-color};
   --global-hover-text-color: #{$white-color};
-  --global-footer-bg-color: #{$grey-color-dark};
-  --global-footer-text-color: #{$grey-color-light};
+  --global-footer-bg-color: #{$grey-color-dark}; // Dark background for light mode
+  --global-footer-text-color: #{$white-color}; // Light text for dark background
   --global-footer-link-color: #{$white-color};
   --global-distill-app-color: #{$grey-color};
   --global-divider-color: rgba(0, 0, 0, 0.1);
@@ -63,6 +59,11 @@
     width: $back-to-top-width;
     z-index: $back-to-top-z-index;
   }
+
+  /* Initial footer text color */
+  .footer-text {
+    color: var(--global-footer-text-color);
+  }
 }
 
 html[data-theme="dark"] {
@@ -73,8 +74,8 @@ html[data-theme="dark"] {
   --global-theme-color: #{$cyan-color};
   --global-hover-color: #{$cyan-color};
   --global-hover-text-color: #{$white-color};
-  --global-footer-bg-color: #{$grey-color-light};
-  --global-footer-text-color: #{$grey-color-dark};
+  --global-footer-bg-color: #{$grey-color-light}; // Light background for dark mode
+  --global-footer-text-color: #{$black-color}; // Dark text for light background
   --global-footer-link-color: #{$black-color};
   --global-distill-app-color: #{$grey-color-light};
   --global-divider-color: #424246;
@@ -100,6 +101,20 @@ html[data-theme="dark"] {
   }
   .repo-img-dark {
     display: block;
+  }
+
+  /* Footer text color for dark mode */
+  .footer-text {
+    margin-top: 1em;
+    color: var(--global-footer-text-color);
+  }
+
+  .footer-logo-light {
+    display: none;
+  }
+
+  .footer-logo-dark {
+    display: inline-block;
   }
 }
 
@@ -137,5 +152,13 @@ html[data-theme-setting="light"] {
     padding-left: 10px;
     padding-top: 12px;
     display: block;
+  }
+
+  .footer-logo-light {
+    display: inline-block;
+  }
+
+  .footer-logo-dark {
+    display: none;
   }
 }

@@ -1,83 +1,49 @@
 {% if site.footer_fixed %}
   <footer class="fixed-bottom" role="contentinfo">
-    <div class="container mt-0">
-      <div class="row">
-        <div class="col-12">
-          &copy; Copyright {{ site.time | date: '%Y' }}
-          {{ site.first_name }}
-          {{ site.middle_name }}
-          {{ site.last_name }}. {{ site.footer_text }}
-          {% if site.impressum_path %}
-            <a href="{{ site.url }}{{ site.baseurl }}{{ site.impressum_path }}">Impressum</a>.
-          {% endif %}
-          {% if site.last_updated %}
-            Last updated: {{ 'now' | date: '%B %d, %Y' }}.
-          {% endif %}
-        </div>
-      </div>
+    <div class="container mt-0 text-center">
       <div class="row mt-3 footer-logos">
         <div class="col-4 text-center">
-          <img src="{{ '/assets/img/logos/dsi_logo_light.jpg' | relative_url }}" alt="DSI Logo Light" class="footer-logo footer-logo-light">
-          <img src="{{ '/assets/img/logos/dsi_logo_dark.jpg' | relative_url }}" alt="DSI Logo Dark" class="footer-logo footer-logo-dark">
+          <img src="{{ '/assets/img/logos/dsi_logo_dark_bg.svg' | relative_url }}" alt="DSI Logo Light" class="footer-logo footer-logo-light">
+          <img src="{{ '/assets/img/logos/dsi_logo_light_bg.png' | relative_url }}" alt="DSI Logo Dark" class="footer-logo footer-logo-dark">
         </div>
         <div class="col-4 text-center">
-          <img src="{{ '/assets/img/logos/khist_logo_schwarze_schrift.svg' | relative_url }}" alt="KHIST Logo Light" class="footer-logo footer-logo-light">
-          <img src="{{ '/assets/img/logos/khist_logo_dark.svg' | relative_url }}" alt="KHIST Logo Dark" class="footer-logo footer-logo-dark">
+          <img src="{{ '/assets/img/logos/khist_logo_dark_bg.svg' | relative_url }}" alt="KHIST Logo Light" class="footer-logo footer-logo-light">
+          <img src="{{ '/assets/img/logos/khist_logo_light_bg.svg' | relative_url }}" alt="KHIST Logo Dark" class="footer-logo footer-logo-dark">
         </div>
         <div class="col-4 text-center">
-          <img src="{{ '/assets/img/logos/snf_logo_light.png' | relative_url }}" alt="SNF Logo Light" class="footer-logo footer-logo-light">
-          <img src="{{ '/assets/img/logos/snf_logo_dark.png' | relative_url }}" alt="SNF Logo Dark" class="footer-logo footer-logo-dark">
+          <img src="{{ '/assets/img/logos/snf_logo_dark_bg.svg' | relative_url }}" alt="SNF Logo Light" class="footer-logo footer-logo-light">
+          <img src="{{ '/assets/img/logos/snf_logo_light_bg.png' | relative_url }}" alt="SNF Logo Dark" class="footer-logo footer-logo-dark">
         </div>
+        <div class="footer-text">
+        &copy; Copyright 2024 The Canon of Latent Spaces - Dr. Eva Cetinić @UZH.
+        website powered by <a href="https://jekyllrb.com/" target="_blank" class="footer-link">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" target="_blank" class="footer-link">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" class="footer-link">GitHub Pages</a>.
       </div>
-      <div class="row mt-3 footer-icons">
-        <div class="col-12 text-center">
-          <!-- Social Icons Here -->
-          <a href="https://github.com/username" target="_blank"><img src="{{ '/assets/icons/github.svg' | relative_url }}" alt="GitHub" class="social-icon"></a>
-          <a href="https://unsplash.com/@username" target="_blank"><img src="{{ '/assets/icons/unsplash.svg' | relative_url }}" alt="Unsplash" class="social-icon"></a>
-          <!-- Add more icons as needed -->
-        </div>
       </div>
     </div>
   </footer>
 {% else %}
   <footer class="sticky-bottom mt-5" role="contentinfo">
-    <div class="container">
-      <div class="row">
-        <div class="col-12">
-          &copy; Copyright {{ site.time | date: '%Y' }}
-          {{ site.first_name }}
-          {{ site.middle_name }}
-          {{ site.last_name }}. {{ site.footer_text }}
-          {% if site.impressum_path %}
-            <a href="{{ site.url }}{{ site.baseurl }}{{ site.impressum_path }}">Impressum</a>.
-          {% endif %}
-          {% if site.last_updated %}
-            Last updated: {{ 'now' | date: '%B %d, %Y' }}.
-          {% endif %}
-        </div>
-      </div>
+    <div class="container text-center">
       <div class="row mt-3 footer-logos">
         <div class="col-4 text-center">
-          <img src="{{ '/assets/img/logos/dsi_logo_light.jpg' | relative_url }}" alt="DSI Logo Light" class="footer-logo footer-logo-light">
-          <img src="{{ '/assets/img/logos/dsi_logo_dark.jpg' | relative_url }}" alt="DSI Logo Dark" class="footer-logo footer-logo-dark">
+          <img src="{{ '/assets/img/logos/dsi_logo_dark_bg.svg' | relative_url }}" alt="DSI Logo Light" class="footer-logo footer-logo-light">
+          <img src="{{ '/assets/img/logos/dsi_logo_light_bg.png' | relative_url }}" alt="DSI Logo Dark" class="footer-logo footer-logo-dark">
         </div>
         <div class="col-4 text-center">
-          <img src="{{ '/assets/img/logos/khist_logo_schwarze_schrift.svg' | relative_url }}" alt="KHIST Logo Light" class="footer-logo footer-logo-light">
-          <img src="{{ '/assets/img/logos/khist_logo_dark.svg' | relative_url }}" alt="KHIST Logo Dark" class="footer-logo footer-logo-dark">
+          <img src="{{ '/assets/img/logos/khist_logo_dark_bg.svg' | relative_url }}" alt="KHIST Logo Light" class="footer-logo footer-logo-light">
+          <img src="{{ '/assets/img/logos/khist_logo_light_bg.svg' | relative_url }}" alt="KHIST Logo Dark" class="footer-logo footer-logo-dark">
         </div>
         <div class="col-4 text-center">
-          <img src="{{ '/assets/img/logos/snf_logo_light.png' | relative_url }}" alt="SNF Logo Light" class="footer-logo footer-logo-light">
-          <img src="{{ '/assets/img/logos/snf_logo_dark.png' | relative_url }}" alt="SNF Logo Dark" class="footer-logo footer-logo-dark">
+          <img src="{{ '/assets/img/logos/snf_logo_dark_bg.svg' | relative_url }}" alt="SNF Logo Light" class="footer-logo footer-logo-light">
+          <img src="{{ '/assets/img/logos/snf_logo_light_bg.png' | relative_url }}" alt="SNF Logo Dark" class="footer-logo footer-logo-dark">
         </div>
+        <div class="footer-text">
+        &copy; Copyright 2024 The Canon of Latent Spaces - Dr. Eva Cetinić @UZH.
+        website powered by <a href="https://jekyllrb.com/" target="_blank" class="footer-link">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" target="_blank" class="footer-link">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" class="footer-link">GitHub Pages</a>.
       </div>
-      <div class="row mt-3 footer-icons">
-        <div class="col-12 text-center">
-          <!-- Social Icons Here -->
-          <a href="https://github.com/username" target="_blank"><img src="{{ '/assets/icons/github.svg' | relative_url }}" alt="GitHub" class="social-icon"></a>
-          <a href="https://unsplash.com/@username" target="_blank"><img src="{{ '/assets/icons/unsplash.svg' | relative_url }}" alt="Unsplash" class="social-icon"></a>
-          <!-- Add more icons as needed -->
-        </div>
       </div>
     </div>
   </footer>
 {% endif %}
+
+

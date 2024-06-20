@@ -3,7 +3,7 @@ layout: default
 permalink: /news-and-events/
 title: News & Events
 nav: true
-nav_order: 1
+nav_order: 3
 pagination:
   enabled: true
   collection: posts
@@ -55,6 +55,7 @@ pagination:
   </div>
 {% endif %}
 
+{% comment %}
 {% assign featured_posts = site.posts | where: "featured", "true" %}
 {% if featured_posts.size > 0 %}
 <br>
@@ -96,6 +97,7 @@ pagination:
 </div>
 <hr>
 {% endif %}
+{% endcomment %}
 
 <ul class="post-list">
   {% if page.pagination.enabled %}

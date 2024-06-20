@@ -14,15 +14,23 @@ profiles:
     content: about_eva.md
     image_circular: false # crops the image to make it circular
     more_info: >
-      <p>555 your office number</p>
+      <p>Dr. Eva Cetinić</p>
       <p>123 your address street</p>
       <p>Your City, State 12345</p>
   - align: left
-    image: prof_pic.jpg
-    content: about_einstein.md
+    image: team/maria-teresa.JPG
+    content: about_maria-teresa.md
     image_circular: false # crops the image to make it circular
     more_info: >
-      <p>555 your office number</p>
+      <p>Maria-Teresa De Rosa Palmini</p>
+      <p>PhD Student</p>
+      <p>Research Associate</p>
+  - align: right
+    image: team/laura.png
+    content: about_laura.md
+    image_circular: false # crops the image to make it circular
+    more_info: >
+      <p>Laura Wagner</p>
       <p>123 your address street</p>
       <p>Your City, State 12345</p>
 ---
