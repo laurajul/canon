@@ -158,24 +158,11 @@ html[data-theme-setting=light] .footer-logo-dark {
 }
 
 body {
-    margin-bottom: 0.2vw;
     color: var(--global-text-color);
     background-color: var(--global-bg-color)
 }
 
-html,
-body {
-    height: 100%;
-    margin: 0;
-    margin-bottom: 50vw
-}
 
-/* Mobile specific styles */
-@media(max-width: 576px) {
-    html, body {
-        margin-bottom: 50vw !important;
-    }
-}
 
 body h1,
 body h2,

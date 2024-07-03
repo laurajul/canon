@@ -41,20 +41,19 @@ $max-content-width: {{ site.max_width }};
 }
 
 .footer-logo {
-  max-width: 50%;
+  max-width: 80%;
   height: auto;
 }
 
 @media (max-width: 767px) {
   .footer-logos .col-4 {
-    flex: 0 0 50%;
+    flex: 0 0 20%;
     padding: 1%;
-    max-width: 30%;
-    margin-bottom: 1.2vh;
+    max-width: 20%;
   }
 
   .footer-logo {
-    max-width: 80%;
+    max-width: 75%;
     height: auto;
   }
 
