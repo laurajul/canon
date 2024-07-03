@@ -2,6 +2,13 @@
 layout: page
 ---
 <div class="post">
+  <style>
+    @media(max-width: 576px) {
+        html, body {
+            margin-bottom: 20vw !important;
+        }
+    }
+  </style>
   <article>
     {% if page.profiles %}
       {% for profile in page.profiles %}
