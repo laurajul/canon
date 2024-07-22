@@ -1,0 +1,35 @@
+name: Sync to latentcanon
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          repository: latentcanon/latentcanon.github.io
+          ref: main
+
+      - name: Set up SSH
+        run: |
+          mkdir -p ~/.ssh
+          echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan github.com >> ~/.ssh/known_hosts
+
+      - name: Sync to repo2
+        run: |
+          git clone --branch gh-pages git@github.com:latentcanon/latentcanon.github.io.git
+          rsync -av --delete .
+          cd repo2
+          git add .
+          git commit -m "Sync from laurajul/canon"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
