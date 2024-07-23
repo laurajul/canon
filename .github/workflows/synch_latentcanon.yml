@@ -1,35 +1,36 @@
-name: Sync to latentcanon
+name: synch_latentcanon
 
 on:
   push:
     branches:
-      - gh-pages
+      - main  # Trigger the workflow on push to the main branch of canon
 
 jobs:
   sync:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v2
         with:
-          repository: latentcanon/latentcanon.github.io
-          ref: main
+          repository: laurajul/canon
+          ref: main  # Check out the main branch of canon
 
       - name: Set up SSH
         run: |
           mkdir -p ~/.ssh
-          echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan github.com >> ~/.ssh/known_hosts
+          ls -al ~/.ssh  # List the SSH directory to verify the key is there
+          cat ~/.ssh/id_rsa  # Print the key to ensure it is correctly written (remove this after debugging for security)
 
       - name: Sync to repo2
         run: |
-          git clone --branch gh-pages git@github.com:latentcanon/latentcanon.github.io.git
-          rsync -av --delete .
+          git clone --branch main git@github.com:latentcanon/latentcanon.github.io.git repo2  # Clone the main branch of repo2 into a directory named repo2
+          rsync -av --delete . repo2/  # Synchronize the content from canon to repo2 directory
           cd repo2
           git add .
-          git commit -m "Sync from laurajul/canon"
-          git push
+          git commit -m "Sync from canon"
+          git push origin main  # Push changes to the main branch of repo2
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
