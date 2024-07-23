@@ -3,7 +3,7 @@ name: Sync to latentcanon
 on:
   push:
     branches:
-      - main
+      - gh-pages
 
 jobs:
   sync:
